@@ -53,7 +53,7 @@ const users = [
 
     const table = document.createElement("table")
     table.setAttribute("id","table_info")
-    tableContainer.appendChild("table")
+    tableContainer.appendChild(table)
     
 
     const tableRow = document.createElement("tr")
@@ -78,20 +78,20 @@ const users = [
     })
 
     users.forEach(user => {
-    const row = document.getElementById("tr")
+    const row = document.getElementById("table_row")
 
 
     Object.values(user).forEach(text => { 
         const cell = document.createElement("td")
-        const textNode = createTextNode(text);
-        row.appendChild(cell);
-        cell.appendChild(textNode);
+        const textNode = document.createTextNode(text)
+        row.appendChild(cell)
+        cell.appendChild(textNode)
 
     })
     const removeUser = document.createElement("td")
     const deleteButton = document.createElement("button")
     deleteButton.textContent = "Delete"
-    deleteButton.addEventListener(clicl, () => { 
+    deleteButton.addEventListener("click", () => { 
         table.removeChild(row);
     })
     removeUser.appendChild(deleteButton);
@@ -155,6 +155,21 @@ const users = [
         statusbar.textContent = e.message
         statusbar.style.color = "red"
     };
+
+
+
+    /////////davaleba 2
+
+
+
+    const text = (string) => { 
+        return new Promise 
+    }
+
+
+
+
+
     
 
 
