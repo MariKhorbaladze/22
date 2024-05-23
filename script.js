@@ -60,13 +60,7 @@ const users = [
     tableRow.setAttribute("id","table_row")
     table.appendChild(tableRow)
 
-    // const tableHeader = document.createElement("th");
-    // tableHeader.setAttribute("id","table_header");
-    // tableRow.appendChild(tableHeader);
 
-    // const tableData = document.createElement("td");
-    // tableData.setAttribute("id","table_data");
-    // tableRow.appendChild(tableData);
 
     const headers = ["ID","Email","First Name","Last Name", "Remove"]
 
@@ -80,7 +74,7 @@ const users = [
 
 
     users.forEach(user => {
-        const row = document.createElement("tr"); // Create a new row for each user
+        const row = document.createElement("tr"); 
     
         Object.values(user).forEach(text => {
             const cell = document.createElement("td");
@@ -97,7 +91,7 @@ const users = [
         });
         removeUser.appendChild(deleteButton);
         row.appendChild(removeUser);
-        table.appendChild(row); // Append the row to the table inside the loop
+        table.appendChild(row); 
     });
 
 
