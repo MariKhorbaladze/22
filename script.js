@@ -157,7 +157,7 @@ const users = [
 
     const textLength = (string) => {
         return new Promise((resolve, reject) => {
-          if (word.length > 10) {
+          if (string.length > 10) {
             setTimeout(() => {
               resolve(string)
             }, 5000)
