@@ -93,6 +93,7 @@ const users = [
         row.appendChild(removeUser);
         table.appendChild(row); 
     });
+    
 
 
 
@@ -154,11 +155,37 @@ const users = [
 
     /////////davaleba 2
 
+    const textLength = (string) => {
+        return new Promise((resolve, reject) => {
+          if (word.length > 10) {
+            setTimeout(() => {
+              resolve(string)
+            }, 5000)
+          } else {
+            setTimeout(() => {
+              reject("This is async function")
+            }, 5000)
+          }
+        })
+      }
+        
 
 
-    const text = (string) => { 
-        return new Promise 
-    }
+      
+      const testTextLength = async () => {
+        try {
+          const result = await textLength("mariKH")
+          console.log(result)
+        }
+        catch (error) {
+          console.log(error)
+        }
+      }
+      
+      testTextLength()
+      
+  
+      
 
 
 
