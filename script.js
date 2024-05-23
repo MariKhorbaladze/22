@@ -77,27 +77,27 @@ const users = [
     tableRow.appendChild(header);
     })
 
+
+
     users.forEach(user => {
-    const row = document.getElementById("table_row")
-
-
-    Object.values(user).forEach(text => { 
-        const cell = document.createElement("td")
-        const textNode = document.createTextNode(text)
-        row.appendChild(cell)
-        cell.appendChild(textNode)
-
-    })
-    const removeUser = document.createElement("td")
-    const deleteButton = document.createElement("button")
-    deleteButton.textContent = "Delete"
-    deleteButton.addEventListener("click", () => { 
-        table.removeChild(row);
-    })
-    removeUser.appendChild(deleteButton);
-    row.appendChild(removeUser);
-    table.appendChild(row);
-
+        const row = document.createElement("tr"); // Create a new row for each user
+    
+        Object.values(user).forEach(text => {
+            const cell = document.createElement("td");
+            const textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+        });
+    
+        const removeUser = document.createElement("td");
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => {
+            table.removeChild(row);
+        });
+        removeUser.appendChild(deleteButton);
+        row.appendChild(removeUser);
+        table.appendChild(row); // Append the row to the table inside the loop
     });
 
 
